@@ -22,6 +22,22 @@
                 "title": "Základné údaje",
 				"type": "object",
 				"properties": {
+					"typeOfFee": {
+						"title": "Typ poplatku",
+						"xxtransCode": "schema.org.baseData.name",
+						"type": "string",
+						"required": true,
+						"enum": [
+							"Členský príspevok",
+							"Štartovné",
+							"Vstupné",
+							"Ostatné"
+						],
+						"render": {
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
 					"name": {
 						"title": "Názov poplatku",
 						"xxtransCode": "schema.org.baseData.name",
@@ -32,14 +48,18 @@
 						"title": "Detaily",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true,
-						"large":"false"
+						"required": false,
+						"large":true
 					},
 					"owner": {
 						"title": "Platiteľ",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true
+						"required": true,
+						"$objectLink": {
+							"registry": "people",
+							"name": "baseData.name"
+						}
 					},
 					"startDate": {
 						"title": "Dátum zaplatenia",
@@ -51,10 +71,26 @@
 						}
 					},
 					"money": {
-						"title": "Poplatok",
+						"title": "Výška poplatku",
+						"xxtransCode": "schema.org.baseData.name",
+						"type": "number",
+						"required": true
+					},
+					"typeOfPay": {
+						"title": "Typ platby",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true
+						"required": true,
+						"enum": [
+							"Hotovosť",
+							"Bankový prevod",
+							"Šek",
+							"Ostatné"
+						],
+						"render": {
+							"component": "psui-selectbox",
+							"searchable": true
+						}
 					}
 				}
             }

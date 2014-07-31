@@ -32,8 +32,8 @@
 						"title": "Detaily",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true,
-						"large":"true"
+						"required": false,
+						"large":true
 					},
 					"place": {
 						"title": "Miesto udalosti",
@@ -68,12 +68,12 @@
 							"name": "baseData.name"
 						}
 					},
-					"sponzor": {
-						"title": "Sponzor",
+					"organizor": {
+						"title": "Usporiadateľ",
 						"xxtransCode": "schema.org.baseData.name",
 						"required": false,
 						"$objectLink": {
-							"registry": "organizations",
+							"registry": "people",
 							"name": "baseData.name"
 						}
 					},
@@ -81,7 +81,7 @@
 						"title": "Vstupné",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true
+						"required": false
 					}
 				}
             }

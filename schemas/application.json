@@ -33,13 +33,17 @@
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
 						"required": true,
-						"large":"true"
+						"large":true
 					},
 					"owner": {
 						"title": "Žiadateľ",
 						"xxtransCode": "schema.org.baseData.name",
 						"type": "string",
-						"required": true
+						"required": true,
+						"$objectLink": {
+							"registry": "people",
+							"name": "baseData.name"
+						}
 					},
 					"startDate": {
 						"title": "Dátum podania žiadosti",
@@ -75,8 +79,13 @@
 						"required": false,
 						"enum": [
 							"vybavené",
-							"v procese vybavovania"
-						]
+							"v procese vybavovania",
+							"zamietnuté"
+						],
+						"render": {
+							"component": "psui-selectbox",
+							"searchable": true
+						}
 					},
 					"result": {
 						"title": "Uznesenie",
